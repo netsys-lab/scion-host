@@ -1,15 +1,22 @@
 # Scion-Host: Run a cross-platform SCION stack in the OVGU Education AS
 This repository contains binaries and code to setup a SCION endhost inside the OVGU Education AS. It should serve as dummy to create a more sophisticated tooling later.
 
-So far Linux (amd64) and Windows (amd64) are supported. MacOS (arm64/amd64) will be next. While some parts of this documentation are OVGU specific, you can transfer these settings to your AS.
+So far Linux (amd64), Windows (amd64) MacOS (arm64/amd64) are supported. While some parts of this documentation are OVGU specific, you can transfer these settings to your AS.
 
-## Requirements
+## Building
+At first you need to build the `scion-host` binaries. We provide a `Makefile` to build everything, so ensure you have `make` installed on your machine. So far building relies on `.sh` scripts, so on `Windows` you might need to use `WSL` for building. 
+
+Initialize your build environment via `make dev`, this will clone the required dependencies into the `dev` folder.
+
+Then run `make build` to build the `scion-host` binaries for all supported platforms. You can find the binaries in the `build/` folder.
+
+## Deployment Requirements
 You need to have access to a [Bootstrapper-Server](https://github.com/netsys-lab/bootstrap-server) URL inside your SCION AS. Let's refer to this URL as `$bootstrapUrl`, which is the combination of IP:Port for your local bootstrapper server. Inside of the Ovgu AS this would be `141.44.25.151:8041`. You need this URl to continue with the next steps.  
 
 ## Windows
 To run the endhost stack on Windows, just download the `scion-host.exe` from this repository. 
 
-You need to open a `Commandline Terminal` as Administrator to run the endhost stack, e.g. by typing `cmd` into Windows search, right click on `Command Line` and use `Open as Administrator`. Now move to the folder where you downloaded the `scion-host.exe` e.g. via `cd C:\Users\User\Downloads\`. If you are in the correct folder, type `scion-host.exe --bootstrap=$bootstrapUrl` in the terminal and press `Enter`. 
+You need to open a `Commandline Terminal` as Administrator to run the endhost stack, e.g. by typing `cmd` into Windows search, right click on `Command Line` and use `Open as Administrator`. Now move to the folder where you downloaded the `scion-host.exe` e.g. via `cd C:\Users\User\Downloads\`. If you are in the correct folder, type `scion-host.exe /bootstrap=$bootstrapUrl` in the terminal and press `Enter`. 
 
 You should see some logging output and the program should stay open.
 
