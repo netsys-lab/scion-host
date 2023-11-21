@@ -45,7 +45,7 @@ You can test SCION connectivity by using the `scion` binary. You may need to set
 
 Now you can show paths to a given destination (e.g. Demokritos): `scion showpaths -r 71-2546 --local <your_ovgu_ip>` or ping a SCION host `scion ping 71-2546,127.0.0.1 --local <your_ovgu_ip>`.
 
-## Linux
+## MacOS
 
 To run the endhost stack on MacOS, just download the `scion-host-darwin-arm64` binary for arm-based platforms or `scion-host-darwin-amd64` for x64-based platforms. We recommend to rename it to `scion-host`. If you can't start this binary on your system for security reasons, please build it locally until we provide official packages. 
 
