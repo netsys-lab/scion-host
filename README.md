@@ -24,7 +24,10 @@ You should see some logging output and the program should stay open.
 
 SCION is installed in your `Program Files` directory, e.g. under `C:\Program Files\scion\windowsx64`. In this folder you can also find the `scion.exe` binary. To use this, either open a `Commandline Terminal` in this directory, or add this directory to your Path, following [this documentation](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/Adding-folder-path-to-Windows-PATH-environment-variable.html).
 
-You need to be in the OvGU university network to connect to the SCION network properly. This can be done either by connecting to OvGU WIFI or LAN being on the campus, or using the [OvGU VPN](https://www.urz.ovgu.de/vpn-path-204,616.html). In the end, you need an OvGU IP Address in the range of `141.44.xx.xx`.
+
+You can test SCION connectivity by using the `scion.exe` binary, e.g. `scion.exe showpaths -r 71-2546` or `scion.exe ping 71-2546,127.0.0.1`.
+
+**Ovgu Specific:**  You need to be in the OvGU university network to connect to the SCION network properly in our AS. This can be done either by connecting to OvGU WIFI or LAN being on the campus, or using the [OvGU VPN](https://www.urz.ovgu.de/vpn-path-204,616.html). In the end, you need an OvGU IP Address in the range of `141.44.xx.xx`.
 
 You can test SCION connectivity by using `scion.exe`. You may need to set your local address properly: Run `arp -a` in your terminal and find your OvGU IP address (should start with `141.44.`).
 
@@ -39,7 +42,9 @@ Now you can show paths to a given destination (e.g. Demokritos): `scion.exe show
 
 To run the endhost stack on Linux, just download the `scion-host` binary from this repository. Run it as root via `sudo ./scion-host --bootstrap=$bootstrapUrl` and keep this binary running. You should see some logging output and the program should stay open. SCION is installed under `/etc/scion-host/linuxx64/`, in this folder, you can also find the `scion` binary. You can use the binary from this folder or [add it to your Path](https://phoenixnap.com/kb/linux-add-to-path). **Warning: Be sure to run the newly installed scion binary when configuring this to your PATH, since an older one won't work with the new dispatcher.** 
 
-You need to be in the OvGU university network to connect to the SCION network properly. This can be done either by connecting to OvGU WIFI or LAN being on the campus, or using the [OvGU VPN](https://www.urz.ovgu.de/vpn-path-204,616.html). In the end, you need an OvGU IP Address in the range of `141.44.xx.xx`.
+You can test SCION connectivity by using the `scion` binary, e.g. `scion showpaths -r 71-2546` or `scion ping 71-2546,127.0.0.1`.
+
+**Ovgu Specific:** You need to be in the OvGU university network to connect to the SCION network properly in our AS. This can be done either by connecting to OvGU WIFI or LAN being on the campus, or using the [OvGU VPN](https://www.urz.ovgu.de/vpn-path-204,616.html). In the end, you need an OvGU IP Address in the range of `141.44.xx.xx`.
 
 You can test SCION connectivity by using the `scion` binary. You may need to set your local address properly: Run `ip a` in your terminal and find your OvGU IP address (should start with `141.44.`).
 
@@ -49,9 +54,12 @@ Now you can show paths to a given destination (e.g. Demokritos): `scion showpath
 
 To run the endhost stack on MacOS, just download the `scion-host-darwin-arm64` binary for arm-based platforms or `scion-host-darwin-amd64` for x64-based platforms. We recommend to rename it to `scion-host`. If you can't start this binary on your system for security reasons, please build it locally until we provide official packages. 
 
-Run it as root via `sudo ./scion-host --bootstrap=$bootstrapUrl` and keep this binary running. You should see some logging output and the program should stay open. SCION is installed under `/Applications(scion-host/darwinx64/` or `/Applications(scion-host/darwinamd64/`, in this folder, you can also find the `scion` binary. You can use the binary from this folder or [add it to your Path](https://gist.github.com/nex3/c395b2f8fd4b02068be37c961301caa7).
+Run it as root via `sudo ./scion-host --bootstrap=$bootstrapUrl` and keep this binary running. You should see some logging output and the program should stay open. SCION is installed under `/Applications/scion-host/darwinx64/` or `/Applications/scion-host/darwinamd64/`, in this folder, you can also find the `scion` binary. You can use the binary from this folder or [add it to your Path](https://gist.github.com/nex3/c395b2f8fd4b02068be37c961301caa7).
 
-You need to be in the OvGU university network to connect to the SCION network properly. This can be done either by connecting to OvGU WIFI or LAN being on the campus, or using the [OvGU VPN](https://www.urz.ovgu.de/vpn-path-204,616.html). In the end, you need an OvGU IP Address in the range of `141.44.xx.xx`.
+You can test SCION connectivity by using the `scion` binary, e.g. `scion showpaths -r 71-2546` or `scion ping 71-2546,127.0.0.1`.
+
+
+**Ovgu Specific:** You need to be in the OvGU university network to connect to the SCION network properly in our AS. This can be done either by connecting to OvGU WIFI or LAN being on the campus, or using the [OvGU VPN](https://www.urz.ovgu.de/vpn-path-204,616.html). In the end, you need an OvGU IP Address in the range of `141.44.xx.xx`.
 
 You can test SCION connectivity by using the `scion` binary. You may need to set your local address properly: Open Settings->Network and find your OvGU IP address (should start with `141.44.`).
 
