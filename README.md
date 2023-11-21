@@ -3,6 +3,8 @@ This repository contains binaries and code to setup a SCION endhost inside the O
 
 So far Linux (amd64), Windows (amd64) MacOS (arm64/amd64) are supported. While some parts of this documentation are OVGU specific, you can transfer these settings to your AS.
 
+**Note:** At the moment, for MacOS and Windows, it is recommended to build the binaries on your local machine, otherwise MacOS won't start them and Windows may block them via BitDefender. We are working on signed packages and installers, but please build the binaries locally on these platforms. You need to have `make`, `go`, and `git` installed.
+
 ## Building
 At first you need to build the `scion-host` binaries. We provide a `Makefile` to build everything, so ensure you have `make` installed on your machine. So far building relies on `.sh` scripts, so on `Windows` you might need to use `WSL` for building. 
 
@@ -29,6 +31,8 @@ You can test SCION connectivity by using `scion.exe`. You may need to set your l
 Now you can show paths to a given destination (e.g. Demokritos): `scion.exe showpaths -r 71-2546 --local <your_ovgu_ip>` or ping a SCION host `scion.exe ping 71-2546,127.0.0.1 --local <your_ovgu_ip>`.
 
 **There will be a Windows Installer for SCION available soon, which makes it easier to run it on windows. Also the output of the SCION binary will be improved.**
+
+**Warning: Sometimes the Bitdefender will mark the scion-host.exe binary as virus, which it isn't. So you need to "ignore" this binary in Bitdefender to allow it to run on your system.** 
 
 ## Linux
 **Note: You need to stop any `scionlab` installations before running the `scion-host` binary, since they use similar ports.**
