@@ -1,4 +1,4 @@
-.PHONY: build dev
+.PHONY: build dev clean
 
 build:
 	@echo "Running build script..."
@@ -7,3 +7,7 @@ build:
 dev:
 	@echo "Running development script..."
 	@./dev.sh
+
+clean:
+	@echo "Cleaning build environment..."
+	@./clean.sh
