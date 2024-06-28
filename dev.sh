@@ -6,12 +6,12 @@ set -e
 
 cd dev
 
-git clone https://github.com/JordiSubira/scion.git
-cd scion
-git checkout dispatcher_off
-git checkout 76805a00890201f1e633ed9f9acd38f7ce3243d9
+git clone https://github.com/scionproto/scion.git
+#cd scion
+#git checkout dispatcher_off
+#git checkout 76805a00890201f1e633ed9f9acd38f7ce3243d9
 
-cd ..
+#cd ..
 git clone https://github.com/martenwallewein/bootstrapper.git
 cd bootstrapper
 git checkout test/mock-only
